@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: checklistmodule 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: checklistmodule
+  template:
+    metadata:
+      labels:
+        app: checklistmodule 
+    spec:
+      containers:
+        - name: checklistmodule 
+          image: auditmanagementpod3.azurecr.io/checklistmodule
+          ports:
+          - containerPort: 80
